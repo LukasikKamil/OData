@@ -1,0 +1,31 @@
+﻿@using ALLinONE.Shared
+@model Northwind.OData.Client.Mvc.Models.ODataCustomers
+@{
+    ViewData["Title"] = "Customers Page";
+    
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]"</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Customer c in Model.Customers)
+            {
+                <tr>
+                    <td>@c.CustomerId</td>
+                    <td>@c.ContactName</td>
+                    <td>@c.City</td>
+                    <td>@c.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
